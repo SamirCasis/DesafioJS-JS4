@@ -30,26 +30,16 @@ const propArriendos = [
         pets: true,
     },
     {
-        nombre: 'Condominio moderno en zona residencial',
-        src: 'https://images.unsplash.com/photo-1567496898669-ee935f5f647a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNvbmRvfGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1000&q=60',
-        descripcion: 'Este elegante condominio moderno está ubicado en una tranquila zona residencial',
-        ubicacion: '123 Main Street, Anytown, CA 91234',
-        habitaciones: '02 Habitaciones',
-        costo: 800000,
+        nombre: 'Condominio Alto Cumbres',
+        src: 'https://http2.mlstatic.com/D_NQ_NP_2X_715517-MLC73153953673_112023-F.webp',
+        descripcion: 'Exclusiva casa en sector privado. Amplios espacios y CCTV incluido',
+        ubicacion: 'El Avellano #10007, Las Condes',
+        habitaciones: '06 Habitaciones',
+        costo: 2000000,
         smoke: true,
         pets: true,
     },
-    {
-        nombre: 'Condominio moderno en zona residencial',
-        src: 'https://images.unsplash.com/photo-1567496898669-ee935f5f647a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNvbmRvfGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1000&q=60',
-        descripcion: 'Este elegante condominio moderno está ubicado en una tranquila zona residencial',
-        ubicacion: '123 Main Street, Anytown, CA 91234',
-        habitaciones: '02 Habitaciones',
-        costp: 800000,
-        smoke: true,
-        pets: true,
-    }
-]
+ ]
 
 const propEnArriendoContainer = document.getElementById('propEnArriendoContainer1');
 
@@ -67,8 +57,14 @@ propArriendos.forEach(propiedad => {
         <p><i class="fa solid fa-bed"></i> ${propiedad.habitaciones}</p>
         <p><i class="fa solid fa-dollar-sign"></i> ${propiedad.costo.toLocaleString('CLP')}</p>
         <p class="${propiedad.smoke ? 'text-success' : 'text-danger'}">
-            <i class="fas fa-smoking-ban">${propiedad.smoke ? 'Permitido fumar' : 'Prohibido fumar'}</i>
-        </p>
+        <i class="fas ${propiedad.smoke ? 'fa-smoking' : 'fa-smoking-ban'}"></i>
+        ${propiedad.smoke ? 'Permitido fumar' : 'Prohibido fumar'}
+    </p>
+    
+    <p class="${propiedad.pets ? 'text-success' : 'text-danger'}">
+        <i class="fas ${propiedad.pets ? 'fa-paw' : 'fa-ban'}"></i>
+        ${propiedad.pets ? 'Se permiten mascotas' : 'No se permiten mascotas'}
+    </p>
     </div>
 </div>
 `;

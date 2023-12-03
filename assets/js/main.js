@@ -22,6 +22,15 @@ const mostrarPropiedades = (propiedades, containerId) => {
                     <p class="${propiedad.smoke ? 'text-success' : 'text-danger'}">
                         <i class="fas fa-smoking-ban">${propiedad.smoke ? 'Permitido fumar' : 'Prohibido fumar'}</i>
                     </p>
+                    <p class="${propiedad.smoke ? 'text-success' : 'text-danger'}">
+                    <i class="fas ${propiedad.smoke ? 'fa-smoking' : 'fa-smoking-ban'}"></i>
+                    ${propiedad.smoke ? 'Permitido fumar' : 'Prohibido fumar'}
+                </p>
+                
+                <p class="${propiedad.pets ? 'text-success' : 'text-danger'}">
+                    <i class="fas ${propiedad.pets ? 'fa-paw' : 'fa-ban'}"></i>
+                    ${propiedad.pets ? 'Se permiten mascotas' : 'No se permiten mascotas'}
+                </p>
                 </div>
             </div>
         `;
@@ -30,5 +39,5 @@ const mostrarPropiedades = (propiedades, containerId) => {
     });
 }
 
-mostrarPropiedades (propiedadesVentas, 'propEnVentaContainer');
-mostrarPropiedades (propiedadesArriendos, 'propEnArriendoContainer');
+mostrarPropiedades(propiedadesVentas, 'propEnVentaContainer');
+mostrarPropiedades(propiedadesArriendos, 'propEnArriendoContainer');

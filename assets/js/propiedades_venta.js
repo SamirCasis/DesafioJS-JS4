@@ -57,13 +57,19 @@ propVentas.forEach(propiedad => {
         <p><i class="fa solid fa-bed"></i> ${propiedad.habitaciones}</p>
         <p><i class="fa solid fa-dollar-sign"></i> ${propiedad.costo.toLocaleString('CLP')}</p>
         <p class="${propiedad.smoke ? 'text-success' : 'text-danger'}">
-            <i class="fas fa-smoking-ban">${propiedad.smoke ? 'Permitido fumar' : 'Prohibido fumar'}</i>
-        </p>
+    <i class="fas ${propiedad.smoke ? 'fa-smoking' : 'fa-smoking-ban'}"></i>
+    ${propiedad.smoke ? 'Permitido fumar' : 'Prohibido fumar'}
+</p>
+
+<p class="${propiedad.pets ? 'text-success' : 'text-danger'}">
+    <i class="fas ${propiedad.pets ? 'fa-paw' : 'fa-ban'}"></i>
+    ${propiedad.pets ? 'Se permiten mascotas' : 'No se permiten mascotas'}
+</p>
     </div>
 </div>
 `;
 
-     propEnVentaContainer.appendChild(divPropiedad);
+    propEnVentaContainer.appendChild(divPropiedad);
 });
 
 
