@@ -1,18 +1,18 @@
-import propVentas from './data/en_venta.js';
-import propArriendos from './data/en_arriendo.js';
+import propiedadesVentas from './data/prop_venta.js';
+import propiedadesArriendos from './data/prop_arriendo.js';
 
-const mostrarPropiedades = (propiedades, containerId) => {
-    const container = document.getElementById(containerId)
+const mostrarPropiedades = (propiedades, propEnVentaCointainer1) => {
+    const propEnVentaContainer = document.getElementById(propEnVentaCointainer1)
 
-    const propLimited = propiedades.slice(0, 3);
+    const propVentas = propiedades.slice(0, 3);
 
-    propLimited.forEach((propVentas) => {
+    propVentas.forEach((propiedad) => {
         const card = document.createElement('div');
         card.className = 'col-md-4 mb-4';
 
-        const cardContent = `
+        card.innerHtml = `
     <div class = "card h-100 rounded border-2 text-center p-3">
-    <img src="${propiedad.src}" class = "card-img-top" alt="${propiedad.nombre}">
+    <img src="${propiedad.src}" class = "card-img-top rounded w-100" alt="${propiedad.nombre}">
     <div class="card-body">
     <h3 class="card-title text-uppercase fw-bold"> ${propiedad.nombre}</h3>
     <p class="card-text">${propiedad.descripcion} </p>
@@ -24,15 +24,13 @@ const mostrarPropiedades = (propiedades, containerId) => {
     </div>
     </div>
 `;
-
-        card.innerHtml = cardContent;
         container.appendChild(card);
     }
     )
 }
 
-mostrarPropiedades(propiedadesEnVenta, 'propEnVentaContainer');
-mostrarPropiedades(propiedadesEnArriendo, 'propEnArriendoContainer');
+mostrarPropiedades(propiedadesVentas, 'propEnVentaContainer');
+mostrarPropiedades(propiedadesArriendos, 'propEnArriendoContainer');
 
 
 /* <p class="text-danger">

@@ -41,4 +41,4 @@ const propVentas = [
     }
 ]
 
-export default propEnVenta;
+export default propVentas;

@@ -51,27 +51,4 @@ const propArriendos = [
     }
 ]
 
-const propEnVentaContainer = document.getElementById('propEnVentaContainer1');
-
-// Utiliza el método forEach para iterar sobre la matriz propVentas
-propVentas.forEach(propiedad => {
-    // Crea un elemento div para la propiedad
-    const divPropiedad = document.createElement('div');
-
-    // Agrega el contenido HTML utilizando la información de la propiedad
-    divPropiedad.innerHTML = `
-        <h2>${propiedad.name}</h2>
-        <img src="${propiedad.src}" alt="${propiedad.nombre}">
-        <p>${propiedad.description}</p>
-        <p>Ubicación: ${propiedad.location}</p>
-        <p>${propiedad.rooms}</p>
-        <p>Costo: ${propiedad.cost}</p>
-        <p class="${propiedad.smoke ? 'text-succes' : 'text-danger'}">Fumar: ${propiedad.smoke ? 'Sí' : 'No'}</p>
-        <p>Mascotas: ${propiedad.pets ? 'Sí' : 'No'}</p>
-    `;
-
-  /*   <p class="${propiedad.smoke ? 'text-succes' : 'text-danger'}"> */
-        <i class="fas fa-smoking-ban"> ${mensajeElement.innerText = propiedad.smoke ? 'Permitido fumar' : 'Prohibido fumar'};</i>
-
-        propEnVentaContainer.appendChild(divPropiedad);
-});
+export default propArriendos;
