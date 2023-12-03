@@ -51,4 +51,4 @@ const propArriendos = [
     }
 ]
 
-export default propArriendos;
+export default propArriendos ;
